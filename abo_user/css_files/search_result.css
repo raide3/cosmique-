@@ -1,0 +1,25 @@
+/* Résultats de recherche */
+.profile-info {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h2 {
+    margin-top: 0;
+    color: #444;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+.profile-info img {
+    max-width: 100px;
+    border-radius: 50%;
+    margin-top: 10px;
+}

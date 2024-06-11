@@ -1,0 +1,56 @@
+
+.navbar {
+      background-color: #333; /* Couleur de fond de la barre */
+      overflow: hidden;
+    }
+
+    .navbar a {
+      float: left; /* Alignement des éléments à gauche */
+      display: block; /* Afficher en bloc pour occuper tout l'espace horizontal */
+      color: white; /* Couleur du texte */
+      text-align: center; /* Centrer le texte */
+      padding: 14px 150px; /* Espacement autour du texte */
+      text-decoration: none; /* Supprimer la décoration du lien */
+    }
+
+    .navbar a:hover {
+      background-color: #ddd; /* Couleur de fond au survol */
+      color: black; /* Changement de couleur du texte au survol */
+    }
+
+
+ body {
+      background-image: url('../images/cosmos.jpg'); /* Spécifie l'image de fond */
+      background-size: cover; /* Redimensionne l'image pour couvrir toute la zone */
+      background-repeat: no-repeat; /* Empêche la répétition de l'image */
+      /* Vous pouvez également ajouter d'autres styles pour le corps de la page ici */
+    }
+
+.cont{
+
+	color:yellow;
+	font-size:40px;
+	font-family:cursive;
+	animation-duration: 1s;
+	animation-name: slidein;
+	
+}
+
+.ainer{
+
+	color:pink;
+	font-size:45px;
+}
+
+@keyframes slidein {
+	from {
+		margin-left: 100%;
+		width: 300%;
+	}
+
+	to {
+		margin-left: 0%;
+		width: 100%;
+	}
+}
+

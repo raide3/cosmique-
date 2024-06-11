@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>
+ COSMOLOVE 
+</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css_files/Projet.css">
+<!--h1 > WELCOME TO OUR WEBSITE </h1-->
+
+<script>
+	function checkPremium() {
+	var isPremium = confirm("Êtes-vous un membre premium \n annuler=non ok=oui?");
+		if (isPremium) {
+			window.location.href = "../../abo_user/php_files/connexion.php"; // Page de connexion pour les membres premium
+		} else {
+			window.location.href = "connexion.html"; // Page de connexion pour les membres standard
+		}
+	}
+    </script>
+
+</head>
+
+
+<body>
+
+<!-- Barre de navigation -->
+<div class="navbar">
+  <a href="#" onclick="checkPremium()">connexion</a>
+  <a href="../php_files/inscription2.php"><i class="fas fa-user"></i> inscription</a>
+  <a href="visite.html"><i class="fas fa-user"></i> visiter</a>
+</div>
+<div class="cont">
+	<br><br><h1><b>BONJOUR ET BIENVENUE</b> SUR <b>COSMOLOVE</b> </h1> 
+	<p> Le premier site en accord avec les astres </p>
+</div>
+
+		<div class= "ainer" >"tu trouveras l'amour qui t'es destiné en suivant les étoiles"</div></td>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

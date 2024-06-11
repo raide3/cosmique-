@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.members-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.member {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: calc(33.333% - 40px); /* Trois membres par ligne avec un espace de 20px autour */
+    box-sizing: border-box;
+}
+
+.member img {
+    width: 300px;
+    height: 180px;
+    display: block;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+

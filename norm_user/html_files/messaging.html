@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie</title>
+    <style>
+        .navbar {
+            background-color: #333; /* Couleur de fond de la barre */
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left; /* Alignement des éléments à gauche */
+            display: block; /* Afficher en bloc pour occuper tout l'espace horizontal */
+            color: white; /* Couleur du texte */
+            text-align: center; /* Centrer le texte */
+            padding: 14px 16px; /* Espacement autour du texte */
+            text-decoration: none; /* Supprimer la décoration du lien */
+        }
+
+        .navbar a:hover {
+            background-color: #ddd; /* Couleur de fond au survol */
+            color: black; /* Changement de couleur du texte au survol */
+        }
+
+        body {
+        background-image: url('../images/cosmos.jpg'); /* Spécifie l'image de fond */
+        background-size: cover;
+         background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .messages {
+            margin-bottom: 20px;
+        }
+        .message {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .message:last-child {
+            border-bottom: none;
+        }
+        .message .timestamp {
+            font-size: 0.8em;
+            color: #999;
+        }
+        .send-message {
+            display: flex;
+            flex-direction: column;
+        }
+        .send-message input, .send-message textarea, .send-message button {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .send-message button {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        .info-message {
+    background: linear-gradient(to right, royalblue, crimson, rebeccapurple);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    color: white; /* Ajout de la couleur blanche pour le texte pour assurer une bonne lisibilité */
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../php_files/notification.php"><i class="fas fa-home"></i> notification</a>
+        <a href="messaging.html"><i class="fas fa-search"></i> message</a>
+        <a href="../php_files/choix_abo.php"><i class="fas fa-user"></i>offres</a>
+        <a href="../php_files/DS.php"><i class="fas fa-user"></i> Demandes de suivi</a>
+        <a href="profile_display.html"><i class="fas fa-user"></i> Compte</a>
+        <a href="../php_files/Profile.php"><i class="fas fa-user"></i> Profile</a>
+        <a href="../php_files/EntryProg.php"><i class="fas fa-user"></i> Acceuil</a>
+    </div>
+    <div class="container">
+        <h1>Messagerie</h1>
+        <div class="info-message">
+            Ceci est un groupe de discussion exceptionnel. Les expéditeurs sont anonymes.
+        </div>
+        <div class="messages">
+            <h2>Messages Reçus</h2>
+            <div id="received-messages"></div>
+            <h2>Messages Envoyés</h2>
+            <div id="sent-messages"></div>
+        </div>
+        <div class="send-message">
+            <h2>Envoyer un message</h2>
+            <form id="sendMessageForm">
+                <input type="text" id="to_user_pseudo" name="to_user_pseudo" placeholder="Pseudo du destinataire" required>
+                <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('sendMessageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch('../php_files/send_message.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data.includes("Utilisateur non trouvé")) {
+                    alert(data);
+                } else {
+                    alert("Message envoyé");
+                    this.reset();
+                    fetchMessages();
+                }
+            });
+        });
+
+        function fetchMessages() {
+            fetch('../php_files/fetch_messages.php')
+                .then(response => response.json())
+                .then(data => {
+                    const receivedMessagesDiv = document.getElementById('received-messages');
+                    const sentMessagesDiv = document.getElementById('sent-messages');
+
+                    receivedMessagesDiv.innerHTML = data.received_messages.map(msg => `
+                        <div class="message">
+                            <div><strong>De : ${msg.from}</strong> (${msg.from_pseudo})</div>
+                            <div>${msg.message}</div>
+                            <div class="timestamp">${msg.timestamp}</div>
+                        </div>
+                    `).join('');
+
+                    sentMessagesDiv.innerHTML = data.sent_messages.map(msg => `
+                        <div class="message">
+                            <div><strong>À : ${msg.to}</strong> (${msg.to_pseudo})</div>
+                            <div>${msg.message}</div>
+                            <div class="timestamp">${msg.timestamp}</div>
+                        </div>
+                    `).join('');
+                });
+        }
+
+        fetchMessages();
+    </script>
+</body>
+</html>
+

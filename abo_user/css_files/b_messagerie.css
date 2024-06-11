@@ -1,0 +1,95 @@
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../images/astro.png'); /* Chemin vers votre image de fond */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    background-color: rgba(0, 64, 128, 0.8); /* Couleur de fond semi-transparente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 15px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #0059b3;
+}
+
+/* En-tête */
+h1 {
+    margin: 20px 0;
+    color: #ffffff; /* Couleur du texte blanche pour contraster avec l'image de fond */
+    text-align: center;
+}
+
+/* Conteneur principal */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin: 20px;
+}
+
+/* En-tête des conversations */
+.container h2 {
+    margin-bottom: 20px;
+    color: #004080;
+    text-align: center;
+}
+
+/* Liens vers les conversations */
+.container a {
+    text-decoration: none;
+    color: #004080;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.container a:hover {
+    color: #0059b3;
+}
+
+/* Dernier message */
+.container p {
+    color: #333;
+    margin: 5px 0;
+}
+

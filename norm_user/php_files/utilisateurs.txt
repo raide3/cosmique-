@@ -1,0 +1,13 @@
+afdali,omar,afdaliomar07@gmail.com,Afdali Omar,Afdali123..,
+Yatribi,Souad,Yatribisouad07@gmail.com,Souad123,Souad123,
+bounejma,youssef,omafdali@gmail.com,bounejma youssef,youssef123,
+noor,lisa,noorlis@gmail.com,noor lisa ,noor123,
+Chibante,Julian,CHibjul@gmail.com,Julian Chibante,Julian123,
+Elkhlifi,Adam,adamelkhlifi@gmail.com,Zdi Adam,Adam123,
+everyone,everyone,everyone@gmail.com,everyone,everyone123,
+Kenfack,Lauraine,Laurane@gmail.com,Lauraine Ken,Lauraine123,
+saidi,besma,besma@gmail.com,besma2,besma123,female,160cm,70kg,Etudiant,2004-12-07,BÉLIER,célibataire
+tom,ryk,tom@gmail.com,tom3,tom123,male,171cm,70kg,Etudiant,2004-07-07,BÉLIER,célibataire,uploads/default.png
+Chacala,Dodo,do@gmail,yep,allemagne,Homme,2.00,80,Entrepreneur,2001-07-01,BÉLIER,célibataire,uploads/default.png
+Bonjour,Louis,za@gmail,lui,aze,Homme,1.8,80,Ingenieur,2522-03-05,CAPRICORNE,en couple,uploads/default.png
+Azerty,Louis,akh@gmail,qaz,1234,Femme,,,Etudiant,,BÉLIER,célibataire,

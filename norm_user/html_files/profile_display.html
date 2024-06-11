@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Compte</title>
+</head>
+<body>
+
+<h1>Mon Compte</h1>
+
+<div id="profileData">
+    <!-- Les données seront affichées ici -->
+</div>
+
+<script>
+    // Récupération des données depuis le fichier JSON
+    fetch('../php_files/profiles.json')
+        .then(response => response.json())
+        .then(data => {
+            // Construction de la chaîne HTML avec les données
+            let profileHTML = '';
+            for (const [key, value] of Object.entries(data)) {
+                // Si la clé est "Photo de profil", afficher l'image
+                if (key === 'Photo de profil') {
+                    profileHTML += `<p><strong>${key}:</strong> <img src="${value}" height="150px" width="150px"></p>`;
+                } else {
+                    // Sinon, afficher la clé et la valeur
+                    profileHTML += `<p><strong>${key}:</strong> ${value}</p>`;
+                }
+            }
+            // Affichage des données dans la page
+            document.getElementById('profileData').innerHTML = profileHTML;
+        })
+        .catch(error => console.error('Erreur:', error));
+</script>
+
+</body>
+</html>
+
